@@ -1,4 +1,6 @@
 const express = require("express");
+const { POST_CREATED_SUCCESS,NEWS_FEED_FETCHED_SUCCESS } = require("../../../config/constants");
+const { apiResponse } = require("../../helpers");
 const app = express();
 
 
@@ -6,11 +8,11 @@ const app = express();
 
 
 app.get("/create_post",(req,res)=>{
-    res.send("create-post")
+    res.send(apiResponse({},POST_CREATED_SUCCESS))
 })
 
 app.get("/news_feed",(req,res)=>{
-    res.send("news-feed")
+    res.send(apiResponse({},NEWS_FEED_FETCHED_SUCCESS))
 })
 
 
